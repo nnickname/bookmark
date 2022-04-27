@@ -1,0 +1,9 @@
+.shapeBackground{
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    width: 200%;
+    border-radius: 130px 0px 0px 130px;
+    background-color: rgb(86, 86, 224);
+    height: 300px;
+}
