@@ -1,9 +1,32 @@
 .shapeBackground{
     position: absolute;
-    top: 35%;
-    left: 65%;
+    top: 50px;
+    left: 100px;
     width: 200%;
-    border-radius: 130px 0px 0px 130px;
+    border-radius: 150px 0px 0px 150px;
     background-color: rgb(86, 86, 224);
     height: 300px;
+    z-index: -1;
 }
+
+.shapeBackgroundReverse{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 200%;
+    border-radius: 0px 150px 150px 0px;
+    background-color: rgb(86, 86, 224);
+    height: 300px;
+    z-index: -1;
+}
+
+@media screen and (min-width : 0px) and (max-width : 908px){
+    .shapeBackground{
+        top: 12%;
+        left: 28%;
+    }
+    .widthCompleteResponsive{
+      width: 100% !important;
+    }
+    
+  }

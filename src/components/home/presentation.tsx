@@ -4,14 +4,13 @@ import IllustrationFeaturesTab1 from '../../images/illustration-hero.svg';
 
 export default function PresentationView(){
     return (
-        <Box>
-          <Flex  pt="20" pb="80">
-            <Box w="50%" pt="20">
+        <Box  pt="20" pb="40" className='flexResponsive'>
+            <Box w="50%" pt="20" className='widthCompleteResponsive'>
               <Heading  fontSize="50">A simple Bookmark Manager</Heading>
               <Text fontSize="22" pt="5" color='gray.500'>
               A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
             </Text>
-            <Flex pt="10">
+            <Flex pt="10" pb="20px" className='flexResponsive'>
               <Button
                   m="1"
                   _focus={{
@@ -19,13 +18,14 @@ export default function PresentationView(){
                   '0px',
                   }} 
                   _active={{borderColor: 'transparent'}} 
-                  _hover={{color: 'teal'}} 
+                  _hover={{backgroundColor: 'teal', color: 'white'}} 
                   colorScheme="teal" 
                   variant="outline" 
                   size="lg" 
                   
               >Get it on chrome</Button>
               <Button
+                
                   m="1"
                   _focus={{
                   boxShadow:
@@ -41,11 +41,10 @@ export default function PresentationView(){
             </Flex>
             
             </Box>
-            <Box> 
+            <Box position='relative'> 
                 <Box className="shapeBackground" />
                 <Image  src={IllustrationFeaturesTab1}/>
             </Box>
-          </Flex>
         </Box>
     )
 }

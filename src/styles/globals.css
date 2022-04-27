@@ -13,16 +13,30 @@ a {
 
 .buttonUnderline{
   color: grey;
-  border-bottom: 2px solid grey;
+  border-bottom: 3px solid rgb(172, 170, 170);
   border-radius: 0px !important;
   padding-bottom: 20px;
 }
 .buttonUnderline:hover{
-  border-bottom: 2px solid rgba(218, 52, 52, 0.26);
+  border-bottom: 3px solid rgba(218, 52, 52, 0.603);
   background-color: transparent !important;
 }
 .buttonUnderline.active{
-  border-bottom: 2px solid rgb(218, 52, 52);
-  color: rgb(218, 52, 52);
+  border-bottom: 3px solid rgb(218, 52, 52);
   background-color: transparent !important;
+}
+
+
+
+.flexResponsive{
+  display: flex;
+}
+@media screen and (min-width : 0px) and (max-width : 908px){
+  .flexResponsive{
+    display: block !important;
+  }
+  .widthCompleteResponsive{
+    width: 100% !important;
+  }
+  
 }

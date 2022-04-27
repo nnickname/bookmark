@@ -15,10 +15,10 @@ export const Navbar = () => {
             <Spacer />
             <Box gap="2">
                 <Stack spacing={4} direction='row' align='center'>
-                    <ButtonWithProps title="FEATURES" color='facebook' variant="ghost" size='md' hoverColor="tomato"/>
-                    <ButtonWithProps title="PRICING" color='facebook' variant="ghost" size='md' hoverColor="tomato"/>
-                    <ButtonWithProps title="CONTACT" color='facebook' variant="ghost" size='md' hoverColor="tomato"/>
-                    <ButtonWithProps title="LOGIN" color='pink' variant="outline" size='md' hoverColor="blue"/>
+                    <ButtonWithProps title="FEATURES" color='facebook' variant="ghost" size='md' hoverColor="tomato" boxShadow='0px' activeBorderColor='transparent'/>
+                    <ButtonWithProps title="PRICING" color='facebook' variant="ghost" size='md' hoverColor="tomato" boxShadow='0px' activeBorderColor='transparent'/>
+                    <ButtonWithProps title="CONTACT" color='facebook' variant="ghost" size='md' hoverColor="tomato" boxShadow='0px' activeBorderColor='transparent'/>
+                    <ButtonWithProps title="LOGIN" color='pink' variant="outline" size='md' hoverColor="blue" boxShadow='0px' activeBorderColor='transparent'/>
                     
                 </Stack>
             </Box>
