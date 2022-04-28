@@ -6,8 +6,8 @@ import { AtSignIcon, InfoOutlineIcon} from '@chakra-ui/icons'
 
 
 function EmailValidation(enteredEmail:string) {
-    let lastAtPos = enteredEmail.lastIndexOf('@');
-    let lastDotPos = enteredEmail.lastIndexOf('.');
+    const lastAtPos = enteredEmail.lastIndexOf('@');
+    const lastDotPos = enteredEmail.lastIndexOf('.');
     return (lastAtPos < lastDotPos && lastAtPos > 0 && enteredEmail.indexOf('@@') === -1 && lastDotPos > 2 && (enteredEmail.length - lastDotPos) > 2);
 }
 const ContactView = () =>{
