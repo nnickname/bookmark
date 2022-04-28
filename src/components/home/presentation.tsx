@@ -4,7 +4,7 @@ import IllustrationFeaturesTab1 from '../../images/illustration-hero.svg';
 
 export default function PresentationView(){
     return (
-        <Box  pt="20" pb="40" className='flexResponsive'>
+        <Box  pt={{base: "0", lg: '20'}} pb="40" className='flexResponsive'>
             <Box w="50%" pt="20" className='widthCompleteResponsive'>
               <Heading  fontSize="50">A simple Bookmark Manager</Heading>
               <Text fontSize="22" pt="5" color='gray.500'>
