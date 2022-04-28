@@ -1,10 +1,14 @@
-import React, { FunctionComponent, useState} from 'react';
+import React, {Suspense, FunctionComponent, useState, useEffect} from 'react';
 
-import { Box, Center, Flex, Button, Heading, Text} from '@chakra-ui/react'
+import { Box, Center, Button, Heading, Text} from '@chakra-ui/react'
 import Image from 'next/image'
 import IllustrationFeaturesTab1 from '../../images/illustration-features-tab-1.svg';
 import IllustrationFeaturesTab2 from '../../images/illustration-features-tab-2.svg';
 import IllustrationFeaturesTab3 from '../../images/illustration-features-tab-3.svg';
+import ButtonWithProps from '../../helpers/buttons';
+
+
+// NO REUTILIZABLE
 
 type ViewProps = {
     title: string,
@@ -38,7 +42,7 @@ const contentBag: Array<ViewProps> = [
 ];
 const SectionView:FunctionComponent<ViewProps> = ({ title, description, buttonTitle, image}) => 
     <Box className='flexResponsive'  pt="5" pb="10">
-        <Box position='relative' mb="90px"> 
+        <Box position='relative' mb={{base: '150px', md: '110px', lg: '90px'}}> 
             <Box className="shapeBackgroundReverse" />
             <Image src={image}/>
         </Box>
@@ -47,26 +51,15 @@ const SectionView:FunctionComponent<ViewProps> = ({ title, description, buttonTi
             <Text fontSize="20" pt="5" pb="5" color='gray.500'>
             {description}
             </Text>
-            <Button
-                background="rgb(86, 86, 224)"
-                m="1"
-                _focus={{
-                boxShadow:
-                '0px',
-                }} 
-                _active={{borderColor: 'transparent'}} 
-                _hover={{color: 'teal', background: 'transparent'}} 
-                colorScheme="teal" 
-                size="lg" 
-                
-            >{buttonTitle}</Button>
+            <ButtonWithProps title={buttonTitle} variant="solid" size="md" background="rgb(86, 86, 224)" color="white" hoverColor="black" boxShadow = '0px' activeBorderColor="transparent"></ButtonWithProps>
 
         </Box>
         
     </Box>
 
 const FeaturesView = () =>{
-    const [selectedBag, setSelectedBag] = useState(0);
+    const [selectedBag, setSelectedBag] = useState(Number);
+    useEffect(() => setSelectedBag(0), [])
     return (
         <Box w="100" mb="30">
             <Center>
@@ -80,32 +73,34 @@ const FeaturesView = () =>{
                 
             </Center>
             <Center width="100%" textAlign="center" mt="20" mb="5">
-                <Box className='flexResponsive' >
-                    {contentBag.map((array, index) => {
-                        return (
-                            <Button
-                                key={index}
-                                width={{sm: '100%'}}
-                                mb="10px"
-                                size="lg"
-                                variant="ghost"
-                                color='gray'
-                                className={selectedBag === index ? "buttonUnderline active" : "buttonUnderline"}
-                                _focus={{
-                                    boxShadow:
-                                    '0px',
-                                    }} 
-                                    _active={{borderColor: 'transparent'}}
-                                onClick={() => setSelectedBag(index)} 
-                            >
-                               {array.labelTitle}
-                            </Button>
-                        )})
-                    }
+                <Suspense>
+                    <Box className='flexResponsive' >
+                        {contentBag.map((array, index) => {
+                            return (
+                                <Button
+                                    key={index}
+                                    width={{sm: '100%'}}
+                                    mb="10px"
+                                    size="lg"
+                                    variant="ghost"
+                                    color='gray'
+                                    className={selectedBag === index ? "buttonUnderline active" : "buttonUnderline"}
+                                    _focus={{
+                                        boxShadow:
+                                        '0px',
+                                        }} 
+                                        _active={{borderColor: 'transparent'}}
+                                    onClick={() => setSelectedBag(index)} 
+                                >
+                                {array.labelTitle}
+                                </Button>
+                            )})
+                        }
 
-                    
-                    
-                </Box>
+                        
+
+                    </Box>
+                </Suspense>
                 
             </Center>
             

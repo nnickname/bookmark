@@ -1,20 +1,11 @@
-import React, { FunctionComponent, useState} from 'react';
-
-import { Box, Center, Flex, Button, Heading, Text} from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Center, Heading, Text} from '@chakra-ui/react'
 import IconChrome from '../../images/logo-chrome.svg';
 import IconOpera from '../../images/logo-opera.svg';
 import IconFirefox from '../../images/logo-firefox.svg';
-
-import BGDots from '../../images/bg-dots.svg';
+import { CardView, CardProps } from '../../helpers/cards';
 
 const separationViews: number = 10;
-type CardProps = {
-    title: string,
-    minimumVersion: string,
-    image: string,
-    separation: number
-}
+
 const contentBag: Array<CardProps> = [
     {
         title: "Chrome",
@@ -36,33 +27,6 @@ const contentBag: Array<CardProps> = [
     },
     
 ];
-const CardView:FunctionComponent<CardProps> = ({ title, minimumVersion, image, separation}) => 
-    <Box m="2">
-        <Box textAlign='center' borderRadius='10' boxShadow='md' mt={{lg:separation + "px"}}>
-            <Box p="10">
-                <Image src={image}/>
-                <Heading fontSize="22" m="2">Add to {title}</Heading>
-                <Text fontSize="18" color='gray.500'> Minimum version {minimumVersion}</Text>
-            </Box>
-            <Box>
-                <Image src={BGDots}/>
-            </Box>
-            <Box p="3">
-                <Button
-                    p="7"
-                    background="rgb(86, 86, 224)"
-                    m="1"
-                    _focus={{boxShadow:'0px',}} 
-                    _active={{borderColor: 'transparent'}} 
-                    _hover={{color: 'teal', background: 'transparent'}} 
-                    colorScheme="teal" 
-                    size="lg"                   
-                >Add & Install Extension</Button>
-            </Box>
-        </Box>
-    </Box>
-
-
 const ExtensionView = () =>{
     return (
         <Box w="100" mb="40">
@@ -79,7 +43,7 @@ const ExtensionView = () =>{
             </Center>
             <Center>
                 <Box className='flexResponsive'>
-                    {contentBag.map((array) => <CardView {...array}/>)}
+                    {contentBag.map((array, index) => <CardView key={index} {...array}/>)}
                 </Box>
             </Center>
             
