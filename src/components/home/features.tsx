@@ -6,7 +6,6 @@ import IllustrationFeaturesTab1 from '../../images/illustration-features-tab-1.s
 import IllustrationFeaturesTab2 from '../../images/illustration-features-tab-2.svg';
 import IllustrationFeaturesTab3 from '../../images/illustration-features-tab-3.svg';
 
-
 type ViewProps = {
     title: string,
     description: string,
@@ -18,21 +17,21 @@ const contentBag: Array<ViewProps> = [
     {
         title: "Bookmark in one click",
         description: "Organize your bookmarks however you like. Our simple drag-and-drop gives you complete control over how you manage your favourites sites",
-        buttonTitle: "More info",
+        buttonTitle: "More Info",
         labelTitle: "Simple Bookmarking",
         image: IllustrationFeaturesTab1
     },
     {
-        title: "Bookmargin",
-        description: "sdsd",
-        buttonTitle: "More info",
+        title: "Intelligent search",
+        description: "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.",
+        buttonTitle: "More Info",
         labelTitle: "Speedy Searching",
         image: IllustrationFeaturesTab2
     },
     {
-        title: "Bookmargin",
-        description: "sdsd",
-        buttonTitle: "More info",
+        title: "Share your bookmarks",
+        description: "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
+        buttonTitle: "More Info",
         labelTitle: "Easy Sharing",
         image: IllustrationFeaturesTab3
     }
@@ -82,7 +81,7 @@ const FeaturesView = () =>{
             </Center>
             <Center width="100%" textAlign="center" mt="20" mb="5">
                 <Box className='flexResponsive' >
-                    {contentBag.map(function(array, index){
+                    {contentBag.map((array, index) => {
                         return (
                             <Button
                                 key={index}

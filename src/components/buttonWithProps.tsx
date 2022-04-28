@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Flex, Box, Spacer, Stack, Button } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 type ButtonProps = {
     title: string,

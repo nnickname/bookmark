@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading, Text, Button, Flex} from '@chakra-ui/react'
+import { Box, Heading, Text, Button, Flex} from '@chakra-ui/react'
 import Image from 'next/image'
 import IllustrationFeaturesTab1 from '../../images/illustration-hero.svg';
 

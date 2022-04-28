@@ -1,11 +1,11 @@
 .shapeBackground{
     position: absolute;
-    top: 50px;
+    top: 120px;
     left: 100px;
     width: 200%;
     border-radius: 150px 0px 0px 150px;
     background-color: rgb(86, 86, 224);
-    height: 300px;
+    height: 360px;
     z-index: -1;
 }
 
@@ -16,8 +16,11 @@
     width: 200%;
     border-radius: 0px 150px 150px 0px;
     background-color: rgb(86, 86, 224);
-    height: 300px;
+    height: 320px;
     z-index: -1;
+}
+.hoverIcon path:hover{
+    fill: hsl(0, 94%, 66%);
 }
 
 @media screen and (min-width : 0px) and (max-width : 908px){
