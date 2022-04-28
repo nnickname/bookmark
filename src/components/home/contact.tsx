@@ -6,8 +6,8 @@ import { AtSignIcon, InfoOutlineIcon} from '@chakra-ui/icons'
 
 
 function EmailValidation(enteredEmail:string) {
-    var lastAtPos = enteredEmail.lastIndexOf('@');
-    var lastDotPos = enteredEmail.lastIndexOf('.');
+    let lastAtPos = enteredEmail.lastIndexOf('@');
+    let lastDotPos = enteredEmail.lastIndexOf('.');
     return (lastAtPos < lastDotPos && lastAtPos > 0 && enteredEmail.indexOf('@@') === -1 && lastDotPos > 2 && (enteredEmail.length - lastDotPos) > 2);
 }
 const ContactView = () =>{
@@ -70,7 +70,9 @@ const ContactView = () =>{
                         <InputGroup>
                             
                             <Input bg="white" borderColor={errorForm ? 'tomato' : 'green'} color="black" placeholder='example@email.com' value={Email} onChange={(e) => setEmail(e.target.value)}/>
-                            <InputRightElement children={errorForm ? <InfoOutlineIcon color="tomato"/> : <AtSignIcon color='green.500'/> } />
+                            <InputRightElement>
+                                {errorForm ? <InfoOutlineIcon color="tomato"/> : <AtSignIcon color='green.500'/> }
+                            </InputRightElement>
                         </InputGroup>
                         <Button
                             p="5"

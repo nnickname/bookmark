@@ -44,7 +44,7 @@ const SectionView:FunctionComponent<ViewProps> = ({ title, description, buttonTi
     <Box className='flexResponsive'  pt="5" pb="10">
         <Box position='relative' mb={{base: '150px', md: '110px', lg: '90px'}}> 
             <Box className="shapeBackgroundReverse" />
-            <Image src={image}/>
+            <Image src={image} alt="ShapeBackground"/>
         </Box>
         <Box  w={{base:'100%', md: '100%', sm: '100%', lg: '70%'}} p={{base: '5', lg: '20'}}>
             <Heading  fontSize="40">{title}</Heading>

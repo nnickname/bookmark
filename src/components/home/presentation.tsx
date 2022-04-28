@@ -43,7 +43,7 @@ export default function PresentationView(){
             </Box>
             <Box position='relative'> 
                 <Box className="shapeBackground" />
-                <Image  src={IllustrationFeaturesTab1}/>
+                <Image  src={IllustrationFeaturesTab1} alt="ShapeBackground"/>
             </Box>
         </Box>
     )

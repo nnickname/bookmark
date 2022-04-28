@@ -4,7 +4,7 @@ import IconOpera from '../../images/logo-opera.svg';
 import IconFirefox from '../../images/logo-firefox.svg';
 import { CardView, CardProps } from '../../helpers/cards';
 
-const separationViews: number = 10;
+const separationViews = 10;
 
 const contentBag: Array<CardProps> = [
     {
